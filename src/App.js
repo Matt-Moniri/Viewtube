@@ -14,14 +14,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import PersonIcon from "@mui/icons-material/Person";
-import ContrastIcon from "@mui/icons-material/Contrast";
-import AppsIcon from "@mui/icons-material/Apps";
-import { createTheme } from "@mui/material";
+import ApplicationBar from "./components/ApplicationBar";
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact", "Legal"];
-const theme = createTheme();
+const navItems = ["Home", "About", "Contact"];
+
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -54,36 +50,8 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar sx={{ backgroundColor: "rgb(80,80,80)" }}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            ViewTube
-          </Typography>
-          <Box sx={{ color: "white" }}>
-            <IconButton>
-              <NotificationsIcon />
-            </IconButton>
-            <IconButton>
-              <PersonIcon />
-            </IconButton>{" "}
-            <IconButton>
-              <ContrastIcon />
-            </IconButton>{" "}
-            <IconButton>
-              <AppsIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <ApplicationBar handleDrawerToggle={handleDrawerToggle} />
+
       <Box component="nav">
         <Drawer
           container={container}
