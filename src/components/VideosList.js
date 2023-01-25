@@ -1,7 +1,7 @@
 import moment from "moment";
 import Video from "./Video";
 import VideosList from "../data/videoData.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function VideoList() {
   const [videosColln, setVideoColln] = useState();
 
@@ -18,8 +18,12 @@ export default function VideoList() {
   }, []);
 
   return (
-    <div>
+    <>
+      {console.log(videosColln)}
+      {videosColln?.map((videoDetails, index) => {
+        return <Video videoDetails={videoDetails} key={index}></Video>;
+      })}
       {/* Try to list the videos and make playlist by using imported `video` component*/}
-    </div>
+    </>
   );
 }
