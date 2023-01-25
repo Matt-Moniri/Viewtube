@@ -1,23 +1,8 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import ApplicationBar from "./components/ApplicationBar";
 import SideDrawer from "./components/SideDrawer";
-import { Grid } from "@mui/material";
-import videoData from "./data/videoData.json";
+import { Grid, Box, Toolbar, CssBaseline } from "@material-ui/core";
 import VideosList from "./components/VideosList";
 //
 
@@ -68,7 +53,7 @@ function DrawerAppBar(props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <Grid container sx={{ justifyContent: "center" }}>
+        <Grid container style={{ justifyContent: "center" }}>
           <VideosList />
         </Grid>
       </Box>

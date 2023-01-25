@@ -1,4 +1,4 @@
-import { Chip } from "@mui/material";
+import { Chip } from "@material-ui/core";
 const filterOptions = [
   { type: "All", selected: true },
   { type: "Electronics", selected: false },
@@ -12,19 +12,26 @@ export default function FilterVideos() {
   return (
     <div>
       {filterOptions.map((item, index) => (
-        <Chip
-          key={index}
-          color="primary"
-          variant="contained"
-          sx={{
-            m: "2px",
-            borderRadius: "15px",
+        <span
+          style={{
+            margin: "5px",
             "&:hover": {
               cursor: "pointer",
             },
           }}
-          label={item.type}
-        ></Chip>
+        >
+          <Chip
+            key={index}
+            color="primary"
+            style={{
+              borderRadius: "15px",
+              "&:hover": {
+                cursor: "pointer",
+              },
+            }}
+            label={item.type}
+          ></Chip>
+        </span>
       ))}{" "}
     </div>
   );

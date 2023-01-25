@@ -1,27 +1,21 @@
 import React, { useState } from "react";
-import SideDrawer from "./SideDrawer";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import PersonIcon from "@mui/icons-material/Person";
-import ContrastIcon from "@mui/icons-material/Contrast";
-import AppsIcon from "@mui/icons-material/Apps";
-import { createTheme, InputBase, styled, alpha } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import SettingsIcon from "@mui/icons-material/Settings"; ////////
+import {
+  AppBar,
+  Box,
+  InputBase,
+  styled,
+  alpha,
+  IconButton,
+  Toolbar,
+  Typography,
+  Icon,
+} from "@material-ui/core";
+////,MenuIcon
+//import NotificationsIcon from "@mui/icons-material/Notifications";
+//import PersonIcon from "@mui/icons-material/Person";
+//import ContrastIcon from "@mui/icons-material/Contrast";
+////import SearchIcon from "@mui/icons-material/Search";
+//import SettingsIcon from "@mui/icons-material/Settings"; ////////
 import FilterVideos from "./FilterVideos.js";
 export default function ApplicationBar(props) {
   const { handleDrawerToggle } = props;
@@ -54,6 +48,7 @@ export default function ApplicationBar(props) {
     setOpenDrawer(!openDrawer);
   };
   const Search = styled("div")(({ theme }) => ({
+    display: "flex",
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -69,9 +64,10 @@ export default function ApplicationBar(props) {
   }));
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
+    padding: "5px",
     height: "100%",
     position: "absolute",
+    right: 0,
     pointerEvents: "none",
     display: "flex",
     alignItems: "center",
@@ -106,7 +102,9 @@ export default function ApplicationBar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <Icon>
+              <i className="fa fa-bars" />
+            </Icon>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             ViewTube
@@ -117,25 +115,36 @@ export default function ApplicationBar(props) {
 
           <Search>
             <SearchIconWrapper>
-              <SearchIcon />
+              <Icon style={{ fontSize: "1rem" }}>
+                <i className="fa fa-search" />
+              </Icon>
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <Box>
-            <IconButton sx={{ color: "white" }}>
-              <NotificationsIcon />
+          <Box
+            style={{
+              position: "absolute",
+              right: "5px",
+            }}
+          >
+            <IconButton>
+              <i style={{ color: "white" }} className="fa fa-bell" />
             </IconButton>
-            <IconButton sx={{ color: "white" }}>
-              <PersonIcon />
+            <IconButton>
+              <i style={{ color: "white" }} className="fa fa-user" />
             </IconButton>{" "}
-            <IconButton sx={{ color: "white" }}>
-              <ContrastIcon />
+            <IconButton>
+              {" "}
+              <i style={{ color: "white" }} className="fa fa-adjust" />
+              {/* <ContrastIcon /> */}
             </IconButton>{" "}
-            <IconButton sx={{ color: "white" }}>
-              <SettingsIcon />
+            <IconButton>
+              {" "}
+              <i style={{ color: "white" }} className="fa fa-cog" />
+              {/* <SettingsIcon /> */}
             </IconButton>
           </Box>
         </Toolbar>

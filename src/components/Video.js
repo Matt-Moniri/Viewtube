@@ -1,20 +1,13 @@
 import React from "react";
 import moment from "moment";
-import {
-  CardContent,
-  Typography,
-  Card,
-  CardMedia,
-  CardActions,
-  Button,
-} from "@mui/material";
+import { CardContent, Typography, Card, CardMedia } from "@material-ui/core";
 export default function Video(props) {
   const { videoDetails } = props;
 
   return (
-    <Card sx={{ maxWidth: 345, m: "15px", height: "300px" }}>
+    <Card style={{ maxWidth: 345, margin: "15px", height: "300px" }}>
       <CardMedia
-        sx={{ height: 140 }}
+        style={{ height: 140 }}
         image={videoDetails.snippet.thumbnails.default.url}
         title={videoDetails.snippet.title}
       />

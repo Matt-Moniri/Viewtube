@@ -6,7 +6,7 @@ import {
   Typography,
   ListItemButton,
   ListItemText,
-} from "@mui/material";
+} from "@material-ui/core";
 const DrawerContent = (props) => {
   const { handleDrawerToggle, navItems } = props;
   return (

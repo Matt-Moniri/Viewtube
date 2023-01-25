@@ -19,7 +19,6 @@ export default function VideoList() {
 
   return (
     <>
-      {console.log(videosColln)}
       {videosColln?.map((videoDetails, index) => {
         return <Video videoDetails={videoDetails} key={index}></Video>;
       })}

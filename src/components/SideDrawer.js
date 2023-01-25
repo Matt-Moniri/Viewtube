@@ -1,14 +1,12 @@
 import {
   List,
   ListItem,
-  ListItemButton,
   Typography,
   Box,
   Drawer,
-  ListItemText,
   Divider,
   Button,
-} from "@mui/material";
+} from "@material-ui/core";
 const drawerWidth = 240;
 
 const SideDrawer = (props) => {
@@ -16,17 +14,21 @@ const SideDrawer = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Menu
       </Typography>
       <Divider />
       <List>
-        <ListItem key={1} disablePadding>
-          <ListItemButton sx={{ textAlign: "center" }}>
-            {/* <ListItemText primary={"item"} > */}
-            <Button>Side Menu button 1</Button>
-            <Button>Side Menu button 2</Button>
-            <Button>Side Menu button 3</Button>
-          </ListItemButton>
+        <ListItem key={1}>
+          {/* <ListItemText primary={"item"} > */}
+          <Button>Side Menu button 1</Button>
+        </ListItem>
+        <ListItem key={2}>
+          {/* <ListItemText primary={"item"} > */}
+          <Button>Side Menu button 2</Button>
+        </ListItem>
+        <ListItem key={3}>
+          {/* <ListItemText primary={"item"} > */}
+          <Button>Side Menu button 3</Button>
         </ListItem>
         {/* {navItems.map((item) => (
           
